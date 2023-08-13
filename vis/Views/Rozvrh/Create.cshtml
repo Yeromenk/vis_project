@@ -1,0 +1,39 @@
+﻿@model DataAccess.Model.Rozvrh
+@{
+    ViewBag.Title = "Rozvrh";
+}
+
+<h2>Rozvrh</h2>
+
+@Html.ValidationSummary()
+
+@using (Html.BeginForm("Add", "Rozvrh", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Subject Name</label>
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.subject_name, new {@class = "form-control"})
+                @Html.ValidationMessageFor(x=>x.subject_name)
+            </div>
+        </div>
+
+        <div class-"form-group">
+            <label class="col-sm-2 control-label">Subject timetable</label>
+            <div class="col-sm-18">
+
+                @Html.TextBoxFor(x => x.subject_timetable, new {@class = "form-control"})
+                @Html.ValidationMessageFor(x=>x.subject_timetable)
+            </div>
+        </div>
+
+
+        <div class-"form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <p></p>
+                <button type="submit" class="btn btn-danger">Pridat rozvrh</button>
+            </div>
+        </div>
+    </form>
+}

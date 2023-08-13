@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Vsechny znamky";
+}
+<h1>@ViewData["Title"]</h1>
+@using DataAccess.Model
+@model List<Znamky>
+
+
+
+<table class = "table table-bordered table-hover"> 
+    <thread>
+        <tr>
+            <th>Znamka            </th>
+            <th> Predmet</th>
+            <th> Ucitel</th>
+            </tr>
+ 
+    </thread>
+    <tbody> 
+        @foreach(Znamky z in Model)
+        {
+            <tr> 
+                <td> @z.grade</td>
+                <td> @z.subject_name</td>
+                <td> @z.teacher</td>
+            </tr>
+        }
+
+    </tbody>
+
+
+
+</table>
+
+<a href="@Url.Action("Create", "Znamky")" class=" btn btn-danger">Pridat znamky</a>
+<div class=" clearfix"></div>

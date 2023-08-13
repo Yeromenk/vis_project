@@ -1,0 +1,16 @@
+﻿<?xml version= "1.0" encoding="utf-8"?>
+     <hibernate-configuration xmlns="urn:nhibernate-configuration-2.2">
+
+        <session-factory>
+          <property name=" connection.driver_class">Hibernate.Driver.SqlclientDriver</property>
+          <property name="connection. connection_string">
+
+			  Data Source=LAPTOP-Q3UAPJR7;Initial Catalog=Skola;Integrated Security=True;
+		  </property>
+
+          <property name="dialect" >NHibernate.Dialect.MsSq12008Dialect</property>
+          <mapping assembly= "DataAccess"/>
+
+       </session-factory>
+                                                                                          
+     </hibernate-configuration>

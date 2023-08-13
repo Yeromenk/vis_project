@@ -1,0 +1,37 @@
+﻿using System.Diagnostics;
+using DataAccess.Model;
+using Microsoft.AspNetCore.Mvc;
+
+namespace vis.Controllers
+{
+    public class ZnamkyController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View(znamkies.GetFakeList);
+
+        }
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Add(Znamky znamky)
+        {
+            if (ModelState.IsValid)
+            {
+                znamkies.GetFakeList.Add(znamky);
+            }
+            else
+            {
+                return View("Create", znamky);
+            }
+
+
+            return RedirectToAction("Index");
+        }
+
+
+    }
+}

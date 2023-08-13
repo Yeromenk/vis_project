@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Domaci Ukoly";
+}
+<h1>@ViewData["Title"]</h1>
+@using DataAccess.Model
+@model List<DomUkol>
+
+
+
+
+<table class="table table-bordered table-hover">
+    <thread>
+        <tr>
+            <th> Homework</th>
+            <th> Predmet</th>
+        </tr>
+
+    </thread>
+    <tbody>
+        @foreach (DomUkol d in Model)
+        {
+            <tr>
+               
+                <td> @d.homework</td>
+                <td> @d.subject_name</td>
+                
+            </tr>
+        }
+
+    </tbody>
+
+
+
+</table>
+
+<a href="@Url.Action("Create", "DomUkol")" class=" btn btn-danger">Pridat DomUkol</a>
+<div class=" clearfix"></div>

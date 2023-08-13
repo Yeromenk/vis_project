@@ -1,0 +1,39 @@
+﻿@model DataAccess.Model.DomUkol
+@{
+    ViewBag.Title = "CreateDomUkol";
+}
+
+<h2>Pridat domaci ukol</h2>
+
+@Html.ValidationSummary()
+
+@using (Html.BeginForm("Add", "DomUkol", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Domaci Ukol</label>
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.homework, new {@class = "form-control"})
+                @Html.ValidationMessageFor(x=>x.homework)
+            </div>
+        </div>
+
+        <div class-"form-group">
+            <label class="col-sm-2 control-label">Subject name</label>
+            <div class="col-sm-18">
+
+                @Html.TextBoxFor(x => x.subject_name, new {@class = "form-control"})
+                @Html.ValidationMessageFor(x=>x.subject_name)
+            </div>
+        </div>
+
+
+        <div class-"form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <p></p>
+                <button type="submit" class="btn btn-danger">Pridat domaci ukol</button>
+            </div>
+        </div>
+    </form>
+}
